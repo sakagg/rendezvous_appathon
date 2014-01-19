@@ -65,13 +65,13 @@
 			dataString = "id=" + id;
 			$.ajax({
 				type: "POST",
-				url: "http://localhost/appathon/scripts/like.php",
+				url: "http://localhost/appathon/scripts/likes.php",
 				data: dataString,
 				success: function(data)
 				{
 					$("#" + id).html(data);
 				},
-				error: function()
+				error: function(data)
 				{
 					alert("Connection Error!!");
 				}
