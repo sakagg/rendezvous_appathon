@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<script src="js/lib/jquery-1.10.2.min.js"></script>
+  	
+	<title>RENDEZVOUS Central</title>
+    
+	<link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="screen">
+
+    <script>
+		$(document).ready(function(){	
+			if( localStorage.username == null || localStorage.person == null )
+			{
+				localStorage.username = " ";
+				localStorage.person = " ";
+			}
+
+			username = localStorage.username;
+			person = localStorage.person;
+			
+			loggedin = true;
+			if ( username == "" || person == "" )
+			{
+				loggedin = false; 
+			}
+
+			if ( loggedin )
+			{
+				$(".logout").hide();
+				if( person != "teachers" )
+				{
+					$(".teachers").hide();
+				}
+				else
+				{
+					$(".students").hide();
+				}
+			}
+			else
+			{
+				$(".login").hide();
+			}
+
+			$('#signout-button').click(function(){
+				localStorage.username = "";
+				localStorage.person = "";
+				window.location.replace("index.html");
+			});
+		});
+	</script>
+	
+	<!-- Color Scheme -->
+    <link rel="stylesheet" href="css/color.css" type="text/css" media="screen">
+</head>
+<body>
+	<div id="st-container" class="st-container">
+		<nav class="st-menu st-effect-4">
+			<ul>
+				<li><h1>RENDEZVOUS</h1></li>
+				<li><a class="ico home selected" href="index.html">Home</a></li>
+				<li><a class="ico blog" href="news_feed.html">News Feed</a></li>
+				<li><a class="ico contact" href="post.html">Post Stuff</a></li>
+				<li><a class="ico contact" href="join_createGroup.html">Groups</a></li>
+				<li><a class="ico contact" href="sign_up.html">Sign Up</a></li>
+				<li><a class="ico aboutus" href="aboutus.html">About Us</a></li>
+				
+			</ul>
+		</nav>
+		
+		<div class="st-pusher">
+			<div class="st-content">
+				<div class="st-content-inner">
+					<!-- Top Navigation -->
+					<header>
+						<div id="st-trigger-effects">
+							<button data-effect="st-effect-4" id="menu-bars"></button>
+						</div>
+						<h1>RENDEZVOUS</h1>
+						<a id="signin-button" class="logout" href="signin.html">SIGN IN</a>
+						<a id="signout-button" class="login" href="index.html">SIGN OUT</a>
+					</header>
+					
+			
+					
+					<div class="content">
+						<fieldset class="text-center">
+							<legend align="center" style="font-weight:bold;font-size:120%">WELCOME TO RENDEZVOUS</legend>
+							<p style="font-size:120%;">If you're scratching your head real hard, or you have knowledge up your sleeve thats worth sharing, Rendezvous is the place to be.</p> <p style="font-size:120%;"> Rendezvous is open for all kinds of students and teachers, so feel free to join the fastest growing meeting place for the learning and the learned. Let the sessions begin!!!</p>
+						</fieldset>
+					</div>
+				</div><!-- /st-content-inner -->
+			</div><!-- /st-content -->
+		</div><!-- /st-pusher -->
+	</div><!-- /st-container -->
+	
+		
+	<!-- Swiper -->
+	<script src="js/lib/idangerous.swiper-2.2.min.js"></script>
+	
+	<script src="js/lib/classie.js"></script>
+	<script src="js/lib/sidebarEffects.js"></script>
+	<script src="js/swipers.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>
