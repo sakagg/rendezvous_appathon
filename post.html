@@ -64,7 +64,6 @@
 			topic = $("#topic").val();
 			group = $("#group_codes").val();
 			dataString = "username=" + username + "&message=" + message + "&topic=" + topic + "&group=" + group;
-			alert(dataString);
 			$.ajax({
 				type: "POST",
 				url: "http://localhost/appathon/scripts/check_post.php",

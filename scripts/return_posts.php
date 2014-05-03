@@ -23,7 +23,7 @@ foreach ($grouparray as $group_code) {
 					<div class="embed-container" style="padding-top: 0; padding-bottom: 0;">' .
 						$rows['message'] .
 					'</div>
-					<button style="font-size:150%;" onclick="likeit(' . $rows['id'] . ')" class="voteup">Vote Up(<span class="likes" id="' . $rows['id'] . '">' . $rows['likes'] .'</span>)
+					<button style="font-size:150%;" onclick="likeit(' . $rows['id'] . ')" class="voteup">Vote Up(<span class="likes" style="color: white;" id="' . $rows['id'] . '">' . $rows['likes'] .'</span>)
 					</button>
 				</fieldset>';
 	}
